@@ -26,9 +26,9 @@ const InfoBar = () => {
       <Grid container>
         {data?.map((product) => (
           <Grid xl={3}>
-            <Item>
+            <Items>
               <CardBox key={product.id} data={product} />
-            </Item>
+            </Items>
           </Grid>
         ))}
       </Grid>
@@ -44,7 +44,7 @@ const ItemUpper = styled.div`
   border-radius: 15px;
   margin: 20px 0;
 `;
-const Item = styled.div`
+const Items = styled.div`
   margin-right: 15px;
   margin-bottom: 15px;
 `;

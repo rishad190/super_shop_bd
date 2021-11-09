@@ -11,9 +11,11 @@ import ModalBox from "../ModalBox/ModalBox";
 
 const CardBox = ({ data }) => {
   const [open, setOpen] = React.useState(false);
-  const { title, price, category, image, rating } = data;
+  const [singleData, setSingleData] = React.useState({});
+  const { title, price, category, image, rating, id } = data;
   const handleOpen = () => {
     setOpen(true);
+    setSingleData(data);
   };
   const handleClose = () => {
     setOpen(false);
@@ -39,14 +41,14 @@ const CardBox = ({ data }) => {
               <VisibilityIcon />
             </IconButton>
           </Tooltip>
-          <ModalBox open={open} handleClose={handleClose} />
+          <ModalBox open={open} handleClose={handleClose} data={singleData} />
         </ButtonBox>
       </CardBoxImageContainer>
       <CardBoxTextContainer>
         <Link to="/">
           <p>{category}</p>
         </Link>
-        <Link to="/">
+        <Link to={`/singleItem/${id}`}>
           <h4>{title}</h4>
         </Link>
         <Box

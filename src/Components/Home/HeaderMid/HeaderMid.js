@@ -9,12 +9,12 @@ const HeaderMid = () => {
     <HeaderMidBox>
       <Container maxWidth="xl">
         <Grid container>
-          <Grid Item lg={2}>
+          <Grid xl={2}>
             <Item>
               <DropDown />
             </Item>
           </Grid>
-          <Grid Item lg={7}>
+          <Grid xl={7}>
             <ItemLink>
               <Link to="/">Home</Link>
               <Link to="/">About</Link>
@@ -23,7 +23,7 @@ const HeaderMid = () => {
               <Link to="/">Contact</Link>
             </ItemLink>
           </Grid>
-          <Grid Item lg={3}>
+          <Grid xl={3}>
             <Item>192000000</Item>
           </Grid>
         </Grid>

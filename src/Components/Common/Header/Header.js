@@ -8,23 +8,23 @@ const Header = () => {
   return (
     <Container maxWidth="xl">
       <Grid container>
-        <Grid item xs={1}>
-          <Item>
+        <Grid xl={1}>
+          <Items>
             <ImageContainer>
               <img src={Logo} alt="" className="" />
             </ImageContainer>
-          </Item>
+          </Items>
         </Grid>
-        <Grid item xs={7}>
-          <Item>
+        <Grid xl={7}>
+          <Items>
             <SearchSelect />
-          </Item>
+          </Items>
         </Grid>
-        <Grid item xs={2}>
-          <Item>3</Item>
+        <Grid xl={2}>
+          <Items>3</Items>
         </Grid>
-        <Grid item xs={2}>
-          <Item>4</Item>
+        <Grid xl={2}>
+          <Items>4</Items>
         </Grid>
       </Grid>
     </Container>
@@ -32,7 +32,7 @@ const Header = () => {
 };
 
 export default Header;
-const Item = styled.div`
+const Items = styled.div`
   height: 200px;
   display: flex;
   justify-content: center;

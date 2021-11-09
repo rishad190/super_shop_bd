@@ -1,4 +1,4 @@
-import { Button, Grid, Menu, MenuItem } from "@mui/material";
+import { Grid, Menu } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -40,11 +40,11 @@ const DropDown = () => {
         }}
       >
         <Grid container>
-          {data?.map((item) => (
-            <Grid item lg={6}>
-              <Item onClick={handleClose}>
+          {data?.map((item, i) => (
+            <Grid key={i} item lg={6}>
+              <Items onClick={handleClose}>
                 <Link to="/">{item}</Link>
-              </Item>
+              </Items>
             </Grid>
           ))}
         </Grid>
@@ -63,7 +63,7 @@ const BigButton = styled.button`
   border: none;
   border-radius: 8px;
 `;
-const Item = styled.div`
+const Items = styled.div`
   text-align: center;
   padding: 10px;
   border: 1px solid black;
