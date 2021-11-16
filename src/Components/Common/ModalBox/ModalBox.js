@@ -9,12 +9,13 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "2px solid lightgray",
   boxShadow: 24,
   p: 4,
 };
 
-const ModalBox = ({ open, handleClose }) => {
+const ModalBox = ({ open, handleClose, data }) => {
+  const { title, price, image, description } = data;
   return (
     <div>
       <Modal
@@ -25,11 +26,13 @@ const ModalBox = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            {title}
           </Typography>
           <button onClick={() => handleClose()}>Close</button>
+          <img src={image} style={{ width: 400, height: 400 }} alt="" />
+          <Typography>${price}</Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            {description}
           </Typography>
         </Box>
       </Modal>

@@ -17,10 +17,10 @@ const PopularProduct = () => {
         </Grid>
       </Grid>
       <Grid container>
-        {data?.map((product) => (
-          <Grid xl={3}>
+        {data?.map((product, i) => (
+          <Grid key={i} xl={3}>
             <Item>
-              <CardBox key={product.id} data={product} />
+              <CardBox data={product} />
             </Item>
           </Grid>
         ))}
