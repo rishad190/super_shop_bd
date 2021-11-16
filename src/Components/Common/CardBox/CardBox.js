@@ -8,11 +8,16 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import ModalBox from "../ModalBox/ModalBox";
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../../../Redux/cartAction";
 
 const CardBox = ({ data }) => {
   const [open, setOpen] = React.useState(false);
   const [singleData, setSingleData] = React.useState({});
   const { title, price, category, image, rating, id } = data;
+
+  const dispatch = useDispatch();
   const handleOpen = () => {
     setOpen(true);
     setSingleData(data);
@@ -60,7 +65,9 @@ const CardBox = ({ data }) => {
         </Box>
         <div>
           <h3>${price}</h3>
-          <Button variant="contained">Add </Button>
+          <Button onClick={() => dispatch(addToCart(data))} variant="contained">
+            Add{" "}
+          </Button>
         </div>
       </CardBoxTextContainer>
     </CardBoxContainer>
