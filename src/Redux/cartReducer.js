@@ -5,11 +5,28 @@ const initialState = {
 const cartReducers = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TO_CART": {
-      const newCart = {
-        ...state,
-        cart: [...state.cart, action.id],
-      };
-      return newCart;
+      const findItem = state.cart.find((item) => item.id === action.id.id);
+      if (findItem) {
+        let cartIndex = state.cart.indexOf(findItem);
+
+        let newArray = [...state.cart];
+        newArray[cartIndex] = {
+          ...newArray[cartIndex],
+          quantity: findItem.quantity + 1,
+        };
+        const newCart = {
+          ...state,
+          cart: newArray,
+        };
+
+        return newCart;
+      } else {
+        const newCart = {
+          ...state,
+          cart: [...state.cart, { ...action.id, quantity: 1 }],
+        };
+        return newCart;
+      }
     }
     case "REMOVE_FROM_CART": {
       const newRemoveCart = {
