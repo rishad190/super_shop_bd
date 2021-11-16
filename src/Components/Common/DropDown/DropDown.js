@@ -55,7 +55,7 @@ const DropDown = () => {
 
 export default DropDown;
 const BigButton = styled.button`
-  background-color: lightgreen;
+  background-color: #e76f51;
   width: 209px;
   height: 54px;
   color: white;
